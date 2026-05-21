@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Accurate Accounting (Pvt) Ltd — Precision in Numbers, Trust in Practice</title>
+<meta name="description" content="Accurate Accounting (Pvt) Ltd — bookkeeping, taxation, company secretarial, and management consultancy. Mawanella, Sri Lanka." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+
+/* ══════════════════════════════════════════
+   RESET + BASE
+══════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: auto; }
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.6;
+  background: #c8e6f3;
+  color: #0A1931;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  cursor: none;
+}
+a { color: inherit; text-decoration: none; cursor: none; }
+button { cursor: none; font-family: inherit; }
+::selection { background: #0097A7; color: #fff; }
+
+/* ══════════════════════════════════════════
+   DESIGN TOKENS
+══════════════════════════════════════════ */
+:root {
+  --navy:      #0A1931;
+  --navy-2:    #0D2240;
+  --teal:      #0097A7;
+  --teal-b:    #00B8CC;
+  --teal-pale: rgba(0,151,167,.09);
+  --sky:       #87CEEB;
+  --sky-light: #C8E6F3;
+  --white:     #ffffff;
+  --off:       rgba(255,255,255,0.55);
+  --glass:     rgba(255,255,255,0.62);
+  --glass-b:   rgba(255,255,255,0.82);
+  --ink:       #0A1931;
+  --ink-mid:   #2D3E52;
+  --ink-dim:   #5A7080;
+  --line-lite: rgba(10,25,49,.09);
+  --line-teal: rgba(0,151,167,.15);
+  --serif:     'Cormorant Garamond', Georgia, serif;
+  --sans:      'Inter', sans-serif;
+  --ease:      cubic-bezier(.65,0,.35,1);
+}
+
+/* ══════════════════════════════════════════
+   LIQUID BACKGROUND SYSTEM
+══════════════════════════════════════════ */
+#bgLiquid {
+  position: fixed;
+  inset: -10%;
+  z-index: -2;
+  pointer-events: none;
+  overflow: hidden;
+  background: linear-gradient(175deg,
+    #b8dff0 0%,
+    #cce9f5 18%,
+    #ddf2fb 38%,
+    #eaf7fd 58%,
+    #f4fafd 78%,
+    #fafcfe 100%
+  );
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(88px);
+  will-change: transform;
+  pointer-events: none;
+}
+.blob.b1 {
+  width: 100vw; height: 100vw;
+  background: radial-gradient(circle at 40% 50%,
+    rgba(0,151,167,.28) 0%,
+    rgba(0,184,204,.16) 40%,
+    transparent 70%);
+  top: -30vw; left: -25vw;
+  animation: drift1 26s ease-in-out infinite;
+}
+.blob.b2 {
+  width: 80vw; height: 80vw;
+  background: radial-gradient(circle at 50% 50%,
+    rgba(135,206,235,.55) 0%,
+    rgba(173,225,245,.30) 50%,
+    transparent 72%);
+  top: 25vh; right: -22vw;
+  animation: drift2 32s ease-in-out infinite;
+  animation-delay: -12s;
+}
+.blob.b3 {
+  width: 70vw; height: 70vw;
+  background: radial-gradient(circle at 50% 50%,
+    rgba(200,238,252,.65) 0%,
+    rgba(220,245,255,.40) 55%,
+    transparent 72%);
+  bottom: -10vw; left: 5vw;
+  animation: drift3 22s ease-in-out infinite;
+  animation-delay: -7s;
+}
+.blob.b4 {
+  width: 60vw; height: 60vw;
+  background: radial-gradient(circle at 50% 50%,
+    rgba(255,255,255,.80) 0%,
+    rgba(240,251,255,.55) 55%,
+    transparent 72%);
+  top: 38vh; left: 22vw;
+  animation: drift4 28s ease-in-out infinite;
+  animation-delay: -20s;
+}
+.blob.b5 {
+  width: 55vw; height: 55vw;
+  background: radial-gradient(circle at 50% 50%,
+    rgba(0,151,167,.14) 0%,
+    rgba(135,206,235,.22) 50%,
+    transparent 72%);
+  bottom: 10vh; right: 5vw;
+  animation: drift5 20s ease-in-out infinite;
+  animation-delay: -4s;
+}
+
+@keyframes drift1 {
+  0%, 100% { transform: translate(0,    0)    scale(1);    }
+  30%       { transform: translate(8vw,  14vh) scale(1.07); }
+  65%       { transform: translate(-6vw, 7vh)  scale(.94);  }
+}
+@keyframes drift2 {
+  0%, 100% { transform: translate(0,     0)     scale(1);    }
+  40%       { transform: translate(-11vw,-9vh)  scale(1.05); }
+  72%       { transform: translate(-3vw,  11vh) scale(.97);  }
+}
+@keyframes drift3 {
+  0%, 100% { transform: translate(0,    0)     scale(1.03); }
+  45%       { transform: translate(7vw, -16vh) scale(.94);  }
+  78%       { transform: translate(-5vw,-7vh)  scale(1.06); }
+}
+@keyframes drift4 {
+  0%, 100% { transform: translate(0,    0)    scale(1);    }
+  32%       { transform: translate(-9vw, 11vh) scale(1.09); }
+  62%       { transform: translate(6vw, -6vh)  scale(.93);  }
+}
+@keyframes drift5 {
+  0%, 100% { transform: translate(0,    0)    scale(1);    }
+  38%       { transform: translate(-7vw,-12vh) scale(1.05); }
+  70%       { transform: translate(8vw,  4vh)  scale(.96);  }
+}
+
+/* ══════════════════════════════════════════
+   FLOATING ACCOUNTING DECORATIONS
+══════════════════════════════════════════ */
+.acct-deco {
+  position: absolute; inset: 0;
+  pointer-events: none; overflow: hidden;
+  user-select: none; z-index: 0;
+}
+.ad {
+  position: absolute;
+  font-family: var(--serif);
+  font-style: italic;
+  color: rgba(0,97,117,.10);
+  animation: adFloat var(--adur, 18s) ease-in-out infinite var(--adel, 0s);
+}
+@keyframes adFloat {
+  0%, 100% { transform: translateY(0) rotate(var(--arot, 0deg)); }
+  50%       { transform: translateY(-18px) rotate(var(--arot, 0deg)); }
+}
+
+/* ══════════════════════════════════════════
+   CUSTOM CURSOR
+══════════════════════════════════════════ */
+.cursor-dot, .cursor-ring {
+  position: fixed; top: 0; left: 0;
+  pointer-events: none; z-index: 9999;
+  border-radius: 50%; will-change: transform;
+  transform: translate(-50%,-50%);
+}
+.cursor-dot {
+  width: 7px; height: 7px;
+  background: var(--teal);
+}
+.cursor-ring {
+  width: 38px; height: 38px;
+  border: 1.5px solid rgba(0,151,167,.45);
+  transition: width .3s ease, height .3s ease, border-color .3s ease;
+}
+.cursor-ring.hover {
+  width: 64px; height: 64px;
+  border-color: var(--teal);
+  background: rgba(0,151,167,.06);
+}
+@media (max-width: 768px) {
+  .cursor-dot, .cursor-ring { display: none; }
+  body { cursor: auto; }
+  a, button { cursor: pointer; }
+}
+
+/* ══════════════════════════════════════════
+   LOADER
+══════════════════════════════════════════ */
+.loader {
+  position: fixed; inset: 0; z-index: 9998;
+  background: #ffffff;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 32px;
+}
+.loader-mark {
+  opacity: 0;
+}
+.loader-logo {
+  height: 52px; width: auto; display: block;
+  filter: drop-shadow(0 2px 12px rgba(0,151,167,.18));
+}
+.loader-bar-wrap {
+  width: 200px; height: 1px;
+  background: rgba(0,97,117,.15); overflow: hidden; position: relative;
+}
+.loader-bar { position: absolute; inset-block: 0; left: 0; width: 0; background: var(--teal); }
+.loader-num {
+  font-family: var(--serif); font-size: 13px;
+  color: var(--ink-dim); font-variant-numeric: tabular-nums;
+}
+
+/* ══════════════════════════════════════════
+   NAVIGATION — floating pill, frosted glass
+══════════════════════════════════════════ */
+nav {
+  position: fixed;
+  top: 20px; left: 50%; transform: translateX(-50%);
+  z-index: 100;
+  display: flex; align-items: center; gap: 12px;
+  padding: 7px 7px 7px 14px;
+  border-radius: 100px;
+  background: rgba(255,255,255,0.48);
+  backdrop-filter: blur(32px) saturate(1.6);
+  -webkit-backdrop-filter: blur(32px) saturate(1.6);
+  border: 1px solid rgba(255,255,255,0.80);
+  box-shadow:
+    0 8px 40px rgba(0,97,117,.14),
+    0 2px 10px rgba(0,97,117,.07),
+    inset 0 1px 0 rgba(255,255,255,.90);
+  transition: box-shadow .4s var(--ease), background .4s;
+  white-space: nowrap;
+}
+nav:hover {
+  box-shadow:
+    0 12px 50px rgba(0,97,117,.18),
+    0 2px 10px rgba(0,97,117,.08),
+    inset 0 1px 0 rgba(255,255,255,.90);
+}
+
+/* Logo inside pill */
+.nav-logo { display: block; height: 34px; flex-shrink: 0; transition: opacity .3s; }
+.nav-logo:hover { opacity: .75; }
+
+/* Pill track — holds indicator + links */
+.nav-track {
+  position: relative;
+  display: flex; align-items: center; gap: 2px;
+}
+
+/* Sliding teal indicator */
+.nav-indicator {
+  position: absolute;
+  border-radius: 100px;
+  background: linear-gradient(135deg, var(--teal) 0%, var(--teal-b) 100%);
+  box-shadow: 0 4px 18px rgba(0,151,167,.40);
+  transition: width .45s var(--ease), left .45s var(--ease), top .45s var(--ease), height .45s var(--ease);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Nav pill links */
+.nav-pill-link {
+  position: relative; z-index: 1;
+  display: block; padding: 10px 44px;
+  border-radius: 100px;
+  font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--ink);
+  transition: color .35s;
+  cursor: none;
+}
+.nav-pill-link.is-active { color: #fff; }
+.nav-pill-link:hover:not(.is-active) { color: var(--teal); }
+
+@media (max-width: 768px) {
+  nav { top: 14px; padding: 6px 6px 6px 12px; gap: 8px; }
+  .nav-logo { height: 28px; }
+  .nav-pill-link { padding: 8px 18px; font-size: 10px; letter-spacing: .1em; }
+  .nav-pill-link:nth-child(n+3) { display: none; }
+}
+
+/* ══════════════════════════════════════════
+   HERO — light, on liquid gradient
+══════════════════════════════════════════ */
+.hero {
+  position: relative; height: 100vh; width: 100%;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+  background: #003840;
+}
+.hero-bg-svg {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  pointer-events: none; z-index: 0;
+  display: block;
+}
+
+/* Decorative grid overlay */
+.hero-grid {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(0,97,117,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,97,117,.045) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 70% 70% at 70% 50%, black 0%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 70% at 70% 50%, black 0%, transparent 75%);
+}
+
+/* Crosshair lines */
+.hero-lines {
+  position: absolute; inset: 0; pointer-events: none;
+}
+.hero-lines::before, .hero-lines::after {
+  content: ''; position: absolute; background: rgba(0,151,167,.12);
+}
+.hero-lines::before { left: 50%; top: 0; bottom: 0; width: 1px; }
+.hero-lines::after  { top: 50%; left: 0; right: 0; height: 1px; }
+
+
+/* Hero text */
+.hero-content {
+  position: relative; z-index: 2;
+  text-align: center; padding: 0 24px;
+  max-width: 1100px;
+}
+.hero-eyebrow {
+  font-size: 11px; letter-spacing: .4em; text-transform: uppercase;
+  color: #003840; margin-bottom: 36px;
+  display: flex; align-items: center; justify-content: center; gap: 16px;
+  opacity: 0;
+}
+.hero-eyebrow::before, .hero-eyebrow::after {
+  content: ''; width: 32px; height: 1px; background: rgba(0,56,64,.45);
+}
+.hero-title {
+  font-family: var(--serif); font-weight: 700;
+  font-size: clamp(54px, 9.5vw, 152px);
+  line-height: .92; letter-spacing: -.025em;
+  color: #c8eaee;
+}
+.hero-title .word { display: inline-block; overflow: hidden; vertical-align: top; }
+.hero-title .word span { display: inline-block; transform: translateY(110%); }
+.hero-title em { font-style: italic; color: #003840; font-weight: 400; }
+
+.hero-sub {
+  font-size: 14px; letter-spacing: .04em; line-height: 1.85;
+  color: #003840; max-width: 520px;
+  margin: 44px auto 0; font-weight: 400; opacity: 0;
+}
+
+/* Scroll cue */
+.hero-scroll {
+  position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
+  font-size: 10px; letter-spacing: .3em; text-transform: uppercase;
+  color: rgba(255,255,255,.50);
+  display: flex; flex-direction: column; align-items: center; gap: 12px; opacity: 0;
+}
+.hero-scroll .bar {
+  width: 1px; height: 48px;
+  background: linear-gradient(to bottom, var(--teal), transparent);
+  animation: scbar 2.4s ease-in-out infinite;
+}
+@keyframes scbar {
+  0%,100% { transform: scaleY(.35); transform-origin: top; }
+  50%      { transform: scaleY(1);   transform-origin: top; }
+}
+
+/* ══════════════════════════════════════════
+   GLASS CARD  — reusable section wrapper
+══════════════════════════════════════════ */
+.glass-section {
+  background: rgba(255,255,255,0.50);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.72);
+}
+
+/* ══════════════════════════════════════════
+   MANIFESTO
+══════════════════════════════════════════ */
+.manifesto {
+  padding: 200px 48px;
+  max-width: 1400px; margin: 0 auto;
+  position: relative;
+}
+.sec-label {
+  font-size: 11px; letter-spacing: .3em; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 60px;
+  display: flex; align-items: center; gap: 16px;
+  font-weight: 500;
+}
+.sec-label::before {
+  font-family: var(--serif); font-style: italic;
+  font-size: 14px; color: var(--ink-dim); letter-spacing: 0;
+  font-weight: 300;
+}
+.sec-label.n01::before { content: '01'; }
+.sec-label.n02::before { content: '02'; }
+.services-heading::before { display: none !important; }
+.sec-label.n03::before { content: '03'; }
+.sec-label.n04::before { content: '04'; }
+
+.manifesto-text {
+  font-family: var(--serif); font-weight: 600;
+  font-size: clamp(32px, 4.6vw, 72px);
+  line-height: 1.18; letter-spacing: -.01em;
+  max-width: 1100px; color: #0F172A;
+}
+.manifesto-text .rl { display: block; overflow: hidden; }
+.manifesto-text .rl > span { display: inline-block; transform: translateY(100%); will-change: transform; }
+.manifesto-text em { font-style: italic; color: var(--teal); }
+@media (max-width: 768px) { .manifesto { padding: 120px 24px; } }
+
+
+/* ══════════════════════════════════════════
+   3D FLOATING ELEMENTS
+══════════════════════════════════════════ */
+.el3d {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+  /* mix-blend-mode multiply removes white JPEG backgrounds on light backgrounds */
+  mix-blend-mode: multiply;
+  transition: opacity .4s;
+}
+.el3d img {
+  width: 100%; height: auto; display: block;
+  /* light blur — visible but soft */
+  filter: blur(1.2px) saturate(.85) brightness(.94);
+}
+
+/* ══════════════════════════════════════════
+   SERVICES
+══════════════════════════════════════════ */
+.services {
+  padding: 60px 0 100px;
+  background: rgba(255,255,255,0.42);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(255,255,255,.75);
+  border-bottom: 1px solid rgba(0,151,167,.10);
+  position: relative; overflow: hidden;
+}
+/* Ledger lines background */
+.services::before {
+  content: '';
+  position: absolute; inset: 0; pointer-events: none;
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent 79px,
+    rgba(0,151,167,.055) 80px
+  );
+}
+.services-hd {
+  max-width: 1400px; margin: 0 auto 48px; padding: 48px 48px 0;
+  display: flex; justify-content: center; align-items: center;
+  background: #ffffff;
+}
+.services-heading {
+  font-family: var(--serif) !important;
+  font-size: clamp(42px, 5.8vw, 92px) !important;
+  font-weight: 700 !important;
+  font-style: italic !important;
+  letter-spacing: -.02em !important;
+  text-transform: none !important;
+  color: #0F172A !important;
+  text-align: center !important;
+  justify-content: center !important;
+  margin-bottom: 60px !important;
+}
+@media (max-width: 900px) {
+  .services-hd { grid-template-columns: 1fr; gap: 40px; padding: 0 24px; margin-bottom: 60px; }
+}
+
+.srv-row {
+  border-top: 1px solid rgba(10,25,49,.08);
+  padding: 60px 48px;
+  max-width: 1400px; margin: 0 auto;
+  display: grid; grid-template-columns: 80px 1fr 1.6fr 60px;
+  gap: 60px; align-items: start;
+  position: relative; cursor: none;
+  transition: padding .5s var(--ease), background .4s;
+}
+.srv-row:last-child { border-bottom: 1px solid rgba(10,25,49,.08); }
+.srv-row::before {
+  content: ''; position: absolute; top: -1px; left: 0;
+  width: 0; height: 2px; background: var(--teal);
+  transition: width .75s var(--ease);
+}
+.srv-row:hover {
+  padding-inline: 64px;
+  background: rgba(255,255,255,.55);
+}
+.srv-row:hover::before { width: 100%; }
+
+.srv-num {
+  font-family: var(--serif); font-style: italic;
+  font-size: 14px; color: var(--ink-dim); padding-top: 10px;
+}
+.srv-name {
+  font-family: var(--serif); font-weight: 400;
+  font-size: clamp(28px, 3.4vw, 50px);
+  line-height: 1.05; letter-spacing: -.01em; color: var(--ink);
+  transition: transform .6s var(--ease);
+}
+.srv-name em { font-style: italic; color: var(--teal); }
+.srv-row:hover .srv-name { transform: translateX(10px); }
+
+.srv-body { padding-top: 10px; }
+.srv-desc {
+  font-size: 14px; line-height: 1.82; color: var(--ink-mid); max-width: 560px;
+  font-weight: 400;
+}
+.srv-tags {
+  display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px;
+  max-height: 0; overflow: hidden; opacity: 0;
+  transition: max-height .55s var(--ease), opacity .4s ease;
+}
+.srv-row:hover .srv-tags { max-height: 100px; opacity: 1; }
+.srv-tag {
+  font-size: 10px; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--teal); border: 1px solid rgba(0,151,167,.28); padding: 4px 10px;
+  font-weight: 500;
+  background: rgba(0,151,167,.06);
+}
+.srv-arrow {
+  font-family: var(--serif); font-size: 30px; color: var(--ink-dim);
+  padding-top: 8px; text-align: right;
+  transition: color .4s, transform .6s var(--ease);
+}
+.srv-row:hover .srv-arrow { color: var(--teal); transform: translateX(10px); }
+
+@media (max-width: 900px) {
+  .srv-row { grid-template-columns: 40px 1fr; gap: 24px; padding: 40px 24px; }
+  .srv-body { grid-column: 1 / -1; }
+  .srv-arrow { display: none; }
+  .srv-row:hover { padding-inline: 24px; }
+}
+
+/* ══════════════════════════════════════════
+   QUOTE
+══════════════════════════════════════════ */
+.quote-wrap {
+  padding: 240px 48px; position: relative; overflow: hidden;
+  text-align: center;
+  background: radial-gradient(ellipse 120% 100% at 50% 50%, #ffffff 0%, #E0F7FA 45%, #B2EBF2 100%);
+}
+/* soft edge fade at top */
+.quote-wrap::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 180px;
+  background: linear-gradient(to bottom, rgba(0,97,117,.08), transparent);
+  pointer-events: none;
+}
+.quote-wrap::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 180px;
+  background: linear-gradient(to top, rgba(0,97,117,.08), transparent);
+  pointer-events: none;
+}
+.quote-bg-char {
+  position: absolute; inset: 0; pointer-events: none; user-select: none;
+  font-family: var(--serif); font-style: italic; line-height: 1;
+  font-size: clamp(280px, 50vw, 800px);
+  color: rgba(0,151,167,.06);
+  display: flex; align-items: center; justify-content: center;
+  will-change: transform;
+}
+.quote-body {
+  font-family: var(--serif); font-weight: 400; font-style: italic;
+  font-size: clamp(30px, 4.8vw, 70px); line-height: 1.28;
+  letter-spacing: -.01em; max-width: 1100px; margin: 0 auto;
+  position: relative; z-index: 2; color: #003840;
+}
+.quote-body .w { display: inline-block; overflow: hidden; vertical-align: top; }
+.quote-body .w span { display: inline-block; transform: translateY(110%); will-change: transform; }
+.quote-attr {
+  font-size: 11px; letter-spacing: .3em; text-transform: uppercase;
+  color: #0097A7; margin-top: 48px; position: relative; z-index: 2; font-weight: 500;
+}
+@media (max-width: 768px) { .quote-wrap { padding: 120px 24px; } }
+
+/* ══════════════════════════════════════════
+   REGISTRATION
+══════════════════════════════════════════ */
+.reg {
+  padding: 180px 48px;
+  max-width: 1400px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+}
+.reg-title {
+  font-family: var(--serif); font-weight: 700;
+  font-size: clamp(40px, 5.4vw, 86px); line-height: 1.05;
+  letter-spacing: -.025em; margin-bottom: 28px; color: #0F172A;
+}
+.reg-title em { font-style: italic; color: var(--teal); font-weight: 400; }
+.reg-desc {
+  font-size: 14px; line-height: 1.85; color: var(--ink-mid);
+  margin-bottom: 44px; max-width: 460px; font-weight: 400;
+}
+.reg-cta {
+  display: inline-flex; align-items: center; gap: 14px;
+  font-size: 11px; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--teal); font-weight: 600;
+  padding: 18px 36px; border: 1.5px solid var(--teal);
+  transition: background .35s var(--ease), color .35s, box-shadow .35s;
+  position: relative; overflow: hidden;
+  background: rgba(0,151,167,.06);
+}
+.reg-cta::before {
+  content: ''; position: absolute; inset: 0;
+  background: var(--teal); transform: translateX(-102%);
+  transition: transform .45s var(--ease);
+}
+.reg-cta:hover { color: #fff; box-shadow: 0 8px 32px rgba(0,151,167,.30); }
+.reg-cta:hover::before { transform: translateX(0); }
+.reg-cta span, .reg-cta svg { position: relative; z-index: 1; }
+
+.reg-visual {
+  position: relative; will-change: transform;
+}
+.reg-visual svg { width: 100%; height: auto; }
+
+@media (max-width: 900px) {
+  .reg { grid-template-columns: 1fr; padding: 100px 24px; }
+  .reg-visual { display: none; }
+}
+
+/* ══════════════════════════════════════════
+   STATS  — dark frosted glass band
+══════════════════════════════════════════ */
+.stats {
+  padding: 88px 48px;
+  background: linear-gradient(135deg, #ffffff 0%, #edfaf6 45%, #c8f0e8 100%);
+  border-top: 1px solid rgba(0,151,167,.12);
+  border-bottom: 1px solid rgba(0,151,167,.10);
+}
+.stats-grid {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(4,1fr); gap: 40px;
+  text-align: center;
+}
+.stat-item {}
+.stat-num {
+  font-family: var(--serif); font-weight: 500;
+  font-size: clamp(52px, 8vw, 100px);
+  line-height: .9; letter-spacing: -.03em;
+  color: var(--teal-b); display: flex; align-items: baseline;
+  justify-content: center; gap: 4px;
+}
+.stat-suf {
+  font-family: var(--serif); font-style: italic; font-weight: 300;
+  font-size: .55em; color: rgba(0,151,167,.65);
+}
+.stat-label {
+  font-size: 11px; letter-spacing: .22em; text-transform: uppercase;
+  color: rgba(10,25,49,.45); margin-top: 14px; font-weight: 400;
+}
+@media (max-width: 768px) {
+  .stats-grid { grid-template-columns: repeat(2,1fr); }
+}
+
+/* ══════════════════════════════════════════
+   CONTACT
+══════════════════════════════════════════ */
+.contact {
+  padding: 30px 48px 50px;
+  max-width: 1400px; margin: 0 auto;
+  position: relative;
+}
+.contact-title {
+  font-family: var(--serif); font-weight: 700;
+  font-size: clamp(42px, 5.8vw, 92px);
+  font-style: italic;
+  line-height: 1; letter-spacing: -.02em;
+  color: #0F172A; margin-bottom: 40px;
+  text-align: center;
+}
+.contact-title em { font-style: italic; color: var(--teal); font-weight: 700; }
+.contact-grid {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 60px;
+  border-top: 1px solid var(--line-teal); padding-top: 60px;
+}
+.ci-label {
+  font-size: 10px; letter-spacing: .28em; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 16px; font-weight: 600;
+}
+.ci-val {
+  font-family: var(--serif); font-weight: 400;
+  font-size: clamp(18px, 2.2vw, 30px); line-height: 1.4;
+  color: var(--ink); transition: color .3s;
+}
+a:hover .ci-val { color: var(--teal); }
+@media (max-width: 768px) {
+  .contact { padding: 60px 24px 60px; }
+  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
+/* ══════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════ */
+footer {
+  border-top: 1px solid rgba(10,25,49,.10);
+  padding: 48px;
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 24px;
+  align-items: center;
+  font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--ink-dim); font-weight: 400;
+  background: rgba(255,255,255,0.50);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+}
+footer em { font-family: var(--serif); font-style: italic; font-weight: 300; text-transform: none; letter-spacing: 0; color: var(--teal); }
+footer > :nth-child(2) { text-align: center; }
+footer > :nth-child(3) { text-align: right; }
+@media (max-width: 768px) {
+  footer { grid-template-columns: 1fr; padding: 32px 24px; text-align: center; }
+  footer > * { text-align: center !important; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ══ LIQUID BACKGROUND ══ -->
+<div id="bgLiquid" aria-hidden="true">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+  <div class="blob b4"></div>
+  <div class="blob b5"></div>
+</div>
+
+<!-- ══ CURSOR ══ -->
+<div class="cursor-dot"  id="cDot"></div>
+<div class="cursor-ring" id="cRing"></div>
+
+<!-- ══ LOADER ══ -->
+<div class="loader" id="loader">
+  <div class="loader-mark"><img src="logo.png" alt="Accurate Accounting" class="loader-logo" /></div>
+  <div class="loader-bar-wrap"><div class="loader-bar" id="lBar"></div></div>
+  <div class="loader-num" id="lNum">0</div>
+</div>
+
+<!-- ══ NAV ══ -->
+<nav id="nav">
+  <a href="#hero"><img src="logo.png" alt="Accurate Accounting" class="nav-logo" /></a>
+  <div class="nav-track" id="navTrack">
+    <div class="nav-indicator" id="navIndicator"></div>
+    <a href="#hero"         class="nav-pill-link is-active" data-section="hero">Home</a>
+    <a href="#services"     class="nav-pill-link"           data-section="services">Services</a>
+    <a href="#registration" class="nav-pill-link"           data-section="registration">Registration</a>
+    <a href="#contact"      class="nav-pill-link"           data-section="contact">Contact</a>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero" id="hero">
+  <!-- ══ HERO BACKGROUND SVG ══ -->
+  <svg class="hero-bg-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs>
+      <!-- Base: bright white → pale teal → logo teal → dark only on far right -->
+      <linearGradient id="hbg" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
+        <stop offset="0%"   stop-color="#ffffff"/>
+        <stop offset="15%"  stop-color="#E0F7FA"/>
+        <stop offset="35%"  stop-color="#B2EBF2"/>
+        <stop offset="55%"  stop-color="#4DD0E1"/>
+        <stop offset="72%"  stop-color="#0097A7"/>
+        <stop offset="88%"  stop-color="#005F6B"/>
+        <stop offset="100%" stop-color="#003840"/>
+      </linearGradient>
+      <!-- Bar variants — light-biased, dark only towards right -->
+      <linearGradient id="bg1" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
+        <stop offset="0%"   stop-color="#ffffff"  stop-opacity="0.85"/>
+        <stop offset="20%"  stop-color="#E0F7FA"  stop-opacity="0.70"/>
+        <stop offset="48%"  stop-color="#B2EBF2"  stop-opacity="0.40"/>
+        <stop offset="75%"  stop-color="#0097A7"  stop-opacity="0.18"/>
+        <stop offset="100%" stop-color="#003840"  stop-opacity="0.05"/>
+      </linearGradient>
+      <linearGradient id="bg2" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
+        <stop offset="0%"   stop-color="#E0F7FA"  stop-opacity="0.65"/>
+        <stop offset="25%"  stop-color="#B2EBF2"  stop-opacity="0.75"/>
+        <stop offset="52%"  stop-color="#4DD0E1"  stop-opacity="0.42"/>
+        <stop offset="78%"  stop-color="#0097A7"  stop-opacity="0.20"/>
+        <stop offset="100%" stop-color="#005F6B"  stop-opacity="0.06"/>
+      </linearGradient>
+      <linearGradient id="bg3" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
+        <stop offset="0%"   stop-color="#ffffff"  stop-opacity="0.75"/>
+        <stop offset="18%"  stop-color="#E0F7FA"  stop-opacity="0.85"/>
+        <stop offset="42%"  stop-color="#B2EBF2"  stop-opacity="0.50"/>
+        <stop offset="68%"  stop-color="#4DD0E1"  stop-opacity="0.25"/>
+        <stop offset="100%" stop-color="#0097A7"  stop-opacity="0.06"/>
+      </linearGradient>
+      <linearGradient id="bg4" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
+        <stop offset="0%"   stop-color="#E0F7FA"  stop-opacity="0.60"/>
+        <stop offset="30%"  stop-color="#B2EBF2"  stop-opacity="0.65"/>
+        <stop offset="56%"  stop-color="#4DD0E1"  stop-opacity="0.38"/>
+        <stop offset="80%"  stop-color="#0097A7"  stop-opacity="0.18"/>
+        <stop offset="100%" stop-color="#005F6B"  stop-opacity="0.06"/>
+      </linearGradient>
+      <linearGradient id="bg5" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
+        <stop offset="0%"   stop-color="#ffffff"  stop-opacity="0.80"/>
+        <stop offset="22%"  stop-color="#E0F7FA"  stop-opacity="0.60"/>
+        <stop offset="48%"  stop-color="#B2EBF2"  stop-opacity="0.35"/>
+        <stop offset="74%"  stop-color="#4DD0E1"  stop-opacity="0.18"/>
+        <stop offset="100%" stop-color="#0097A7"  stop-opacity="0.05"/>
+      </linearGradient>
+      <linearGradient id="bg6" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
+        <stop offset="0%"   stop-color="#E0F7FA"  stop-opacity="0.68"/>
+        <stop offset="26%"  stop-color="#B2EBF2"  stop-opacity="0.72"/>
+        <stop offset="54%"  stop-color="#4DD0E1"  stop-opacity="0.42"/>
+        <stop offset="80%"  stop-color="#0097A7"  stop-opacity="0.20"/>
+        <stop offset="100%" stop-color="#005F6B"  stop-opacity="0.07"/>
+      </linearGradient>
+      <linearGradient id="bg7" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
+        <stop offset="0%"   stop-color="#ffffff"  stop-opacity="0.65"/>
+        <stop offset="30%"  stop-color="#E0F7FA"  stop-opacity="0.75"/>
+        <stop offset="56%"  stop-color="#B2EBF2"  stop-opacity="0.42"/>
+        <stop offset="80%"  stop-color="#4DD0E1"  stop-opacity="0.20"/>
+        <stop offset="100%" stop-color="#0097A7"  stop-opacity="0.07"/>
+      </linearGradient>
+      <linearGradient id="bg8" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
+        <stop offset="0%"   stop-color="#E0F7FA"  stop-opacity="0.72"/>
+        <stop offset="28%"  stop-color="#B2EBF2"  stop-opacity="0.60"/>
+        <stop offset="54%"  stop-color="#4DD0E1"  stop-opacity="0.35"/>
+        <stop offset="78%"  stop-color="#0097A7"  stop-opacity="0.16"/>
+        <stop offset="100%" stop-color="#005F6B"  stop-opacity="0.05"/>
+      </linearGradient>
+      <!-- Vertical-only blur filters: stdDeviation="0 N" blurs only vertically → feathered bar edges -->
+      <filter id="vf1" x="0" y="-60%" width="100%" height="220%"><feGaussianBlur stdDeviation="0 24"/></filter>
+      <filter id="vf2" x="0" y="-80%" width="100%" height="260%"><feGaussianBlur stdDeviation="0 18"/></filter>
+      <filter id="vf3" x="0" y="-50%" width="100%" height="200%"><feGaussianBlur stdDeviation="0 30"/></filter>
+      <filter id="vf4" x="0" y="-70%" width="100%" height="240%"><feGaussianBlur stdDeviation="0 22"/></filter>
+      <!-- Ambient radial glows — logo teal palette -->
+      <radialGradient id="rg1" cx="4%" cy="42%" r="40%" gradientUnits="objectBoundingBox">
+        <stop offset="0%"   stop-color="#E0F7FA"  stop-opacity="0.55"/>
+        <stop offset="40%"  stop-color="#80DEEA"  stop-opacity="0.25"/>
+        <stop offset="100%" stop-color="#0097A7"  stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="rg2" cx="22%" cy="58%" r="32%" gradientUnits="objectBoundingBox">
+        <stop offset="0%"   stop-color="#0097A7"  stop-opacity="0.30"/>
+        <stop offset="55%"  stop-color="#005F6B"  stop-opacity="0.12"/>
+        <stop offset="100%" stop-color="#003840"  stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="rg3" cx="52%" cy="35%" r="28%" gradientUnits="objectBoundingBox">
+        <stop offset="0%"   stop-color="#005F6B"  stop-opacity="0.20"/>
+        <stop offset="100%" stop-color="#001A1F"  stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <!-- Base layer -->
+    <rect width="1440" height="800" fill="url(#hbg)"/>
+    <!-- 8 translucent horizontal bars with vertical-only blur for feathered, glowing edges -->
+    <rect x="0" y="25"  width="1440" height="90"  fill="url(#bg1)" filter="url(#vf1)"/>
+    <rect x="0" y="120" width="1440" height="70"  fill="url(#bg3)" filter="url(#vf2)"/>
+    <rect x="0" y="210" width="1440" height="110" fill="url(#bg2)" filter="url(#vf3)"/>
+    <rect x="0" y="310" width="1440" height="85"  fill="url(#bg4)" filter="url(#vf4)"/>
+    <rect x="0" y="400" width="1440" height="100" fill="url(#bg5)" filter="url(#vf1)"/>
+    <rect x="0" y="495" width="1440" height="80"  fill="url(#bg6)" filter="url(#vf2)"/>
+    <rect x="0" y="570" width="1440" height="120" fill="url(#bg7)" filter="url(#vf3)"/>
+    <rect x="0" y="685" width="1440" height="85"  fill="url(#bg8)" filter="url(#vf4)"/>
+    <!-- Radial ambient glows -->
+    <rect width="1440" height="800" fill="url(#rg1)"/>
+    <rect width="1440" height="800" fill="url(#rg2)"/>
+    <rect width="1440" height="800" fill="url(#rg3)"/>
+  </svg>
+  <div class="hero-grid"></div>
+  <div class="hero-lines"></div>
+
+  <!-- Floating accounting symbols -->
+  <div class="acct-deco" aria-hidden="true">
+    <span class="ad" style="font-size:clamp(80px,14vw,200px);top:8%;left:3%;--adur:22s;--arot:-6deg;">∑</span>
+    <span class="ad" style="font-size:clamp(40px,7vw,110px);top:15%;right:4%;--adur:18s;--adel:-5s;">%</span>
+    <span class="ad" style="font-size:clamp(60px,10vw,140px);bottom:10%;left:8%;--adur:26s;--adel:-12s;--arot:4deg;">÷</span>
+    <span class="ad" style="font-size:clamp(30px,5vw,80px);bottom:20%;right:38%;--adur:20s;--adel:-8s;">+</span>
+  </div>
+
+  <div class="hero-content" id="hContent">
+    <div class="hero-eyebrow" id="hEye">EST. SRI LANKA · REGISTERED COMPANY SECRETARY</div>
+    <h1 class="hero-title" id="hTitle">
+      <span class="word"><span>Accurate</span></span>&#32;
+      <span class="word"><span><em>Numbers.</em></span></span><br>
+      <span class="word"><span>Smarter</span></span>&#32;
+      <span class="word"><span><em>Decisions.</em></span></span>
+    </h1>
+    <p class="hero-sub" id="hSub">Accounting, taxation, and corporate compliance — trusted by Sri Lankan businesses to get the numbers right.</p>
+  </div>
+
+  <div class="hero-scroll" id="hScroll">
+    <span>Scroll</span>
+    <div class="bar"></div>
+  </div>
+</section>
+
+<!-- ══ STATS ══ -->
+<div class="stats">
+  <div class="stats-grid">
+    <div class="stat-item">
+      <div class="stat-num"><span class="sc" data-t="100" id="sc1">0</span><span class="stat-suf">+</span></div>
+      <div class="stat-label">Customers Served</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num"><span class="sc" data-t="4" id="sc2">0</span></div>
+      <div class="stat-label">Core Services</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num"><span class="sc" data-t="100" id="sc3">0</span><span class="stat-suf">%</span></div>
+      <div class="stat-label">Compliance Rate</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num"><span class="sc" data-t="1" id="sc4">0</span></div>
+      <div class="stat-label">Stop Solution</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ MANIFESTO ══ -->
+<section class="manifesto" style="position:relative;">
+  <!-- Decorative ledger lines -->
+  <div class="acct-deco" aria-hidden="true">
+    <span class="ad" style="font-size:clamp(100px,18vw,260px);top:10%;right:2%;--adur:30s;--adel:-14s;color:rgba(0,97,117,.06);">≡</span>
+  </div>
+  <div class="sec-label n01">The Practice</div>
+  <h2 class="manifesto-text" id="mText">
+    <span class="rl"><span>We are a chartered accounting practice</span></span>
+    <span class="rl"><span>based in Mawanella — working with founders,</span></span>
+    <span class="rl"><span>family businesses, and growing companies</span></span>
+    <span class="rl"><span>who value <em>clarity, discretion, and detail.</em></span></span>
+  </h2>
+</section>
+
+
+<!-- ══ SERVICES ══ -->
+<section class="services" id="services" style="position:relative;">
+  <div class="services-hd">
+    <div class="sec-label n02 services-heading">Our Services</div>
+  </div>
+
+  <div class="srv-row" data-cursor>
+    <div class="srv-num">/ 01</div>
+    <h3 class="srv-name">Accounting &amp;<br><em>Book-keeping</em></h3>
+    <div class="srv-body">
+      <p class="srv-desc">Setup, monthly updates, and financial statements — including VAT and NBT handling. Payroll covering EPF, ETF, and PAYE compliance. Inventory and fixed-asset management with SLTDA and Customs registration support.</p>
+      <div class="srv-tags">
+        <span class="srv-tag">Book Keeping</span><span class="srv-tag">VAT / NBT</span>
+        <span class="srv-tag">Payroll</span><span class="srv-tag">EPF / ETF / PAYE</span>
+        <span class="srv-tag">Inventory</span><span class="srv-tag">Fixed Assets</span>
+      </div>
+    </div>
+    <div class="srv-arrow">→</div>
+  </div>
+
+  <div class="srv-row" data-cursor>
+    <div class="srv-num">/ 02</div>
+    <h3 class="srv-name">Taxation<br><em>Services</em></h3>
+    <div class="srv-body">
+      <p class="srv-desc">Registration and tax computation, return filing, and direct representation in client interviews with revenue authorities. Tax optimisation strategy and consultative advice across direct and indirect taxation.</p>
+      <div class="srv-tags">
+        <span class="srv-tag">Tax Registration</span><span class="srv-tag">Return Filing</span>
+        <span class="srv-tag">Representation</span><span class="srv-tag">Tax Optimisation</span>
+      </div>
+    </div>
+    <div class="srv-arrow">→</div>
+  </div>
+
+  <div class="srv-row" data-cursor>
+    <div class="srv-num">/ 03</div>
+    <h3 class="srv-name">Company Secretarial<br><em>Services</em></h3>
+    <div class="srv-body">
+      <p class="srv-desc">We are a Registered Company Secretary. Company registration, business licences, permit applications, and registration of trademarks and logos — handled with full regulatory diligence.</p>
+      <div class="srv-tags">
+        <span class="srv-tag">Company Registration</span><span class="srv-tag">Business Licences</span>
+        <span class="srv-tag">Permit Applications</span><span class="srv-tag">Trademarks &amp; Logos</span>
+      </div>
+    </div>
+    <div class="srv-arrow">→</div>
+  </div>
+
+  <div class="srv-row" data-cursor>
+    <div class="srv-num">/ 04</div>
+    <h3 class="srv-name">Management<br><em>Consultancy</em></h3>
+    <div class="srv-body">
+      <p class="srv-desc">Business valuation, feasibility studies, due diligence, and internal control system design. Risk advisory, all-type proposal writing, and custom registration for businesses at every stage of growth.</p>
+      <div class="srv-tags">
+        <span class="srv-tag">Valuation</span><span class="srv-tag">Feasibility</span>
+        <span class="srv-tag">Due Diligence</span><span class="srv-tag">Risk Advisory</span>
+        <span class="srv-tag">Proposals</span>
+      </div>
+    </div>
+    <div class="srv-arrow">→</div>
+  </div>
+</section>
+
+<!-- ══ QUOTE ══ -->
+<section class="quote-wrap" style="position:relative;">
+  <div class="quote-bg-char" id="qBg">&amp;</div>
+  <p class="quote-body" id="qText">
+    <span class="w"><span>"The</span></span>&#32;
+    <span class="w"><span>quieter</span></span>&#32;
+    <span class="w"><span>the</span></span>&#32;
+    <span class="w"><span>numbers,</span></span><br>
+    <span class="w"><span>the</span></span>&#32;
+    <span class="w"><span>louder</span></span>&#32;
+    <span class="w"><span>the</span></span>&#32;
+    <span class="w"><span>business</span></span>&#32;
+    <span class="w"><span>can</span></span>&#32;
+    <span class="w"><span>speak."</span></span>
+  </p>
+  <div class="quote-attr">— Our Working Principle</div>
+</section>
+
+<!-- ══ REGISTRATION ══ -->
+<section id="registration">
+<div class="reg">
+  <div>
+    <div class="sec-label n03">Begin a Registration</div>
+    <h2 class="reg-title">Start your<br>company in <em>days,</em><br>not months.</h2>
+    <p class="reg-desc">Complete a short form and our team will reach out with everything needed to incorporate your business in Sri Lanka. We handle the regulatory groundwork — so you can return to building.</p>
+    <a href="https://forms.gle/fuCDcNfK6LSnnR6E8" target="_blank" rel="noopener" class="reg-cta" data-cursor>
+      <span>Open Registration Form</span>
+      <svg width="20" height="10" viewBox="0 0 20 10" fill="none">
+        <path d="M0 5h18M14 1l4 4-4 4" stroke="currentColor" stroke-width="1"/>
+      </svg>
+    </a>
+  </div>
+  <div class="reg-visual">
+    <svg viewBox="0 0 400 440" fill="none">
+      <defs>
+        <linearGradient id="regGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#C8E6F3"/>
+          <stop offset="100%" stop-color="#EEF8FC"/>
+        </linearGradient>
+        <pattern id="regGrid" width="30" height="30" patternUnits="userSpaceOnUse">
+          <path d="M0 30V0H30" stroke="rgba(0,97,117,.07)" stroke-width="0.6"/>
+        </pattern>
+      </defs>
+      <rect width="400" height="440" rx="2" fill="url(#regGrad)"/>
+      <rect width="400" height="440" rx="2" fill="url(#regGrid)"/>
+      <!-- Document lines -->
+      <rect x="48" y="60"  width="304" height="1" fill="rgba(0,97,117,.18)"/>
+      <rect x="48" y="100" width="220" height="1" fill="rgba(10,25,49,.10)"/>
+      <rect x="48" y="130" width="260" height="1" fill="rgba(10,25,49,.10)"/>
+      <rect x="48" y="160" width="190" height="1" fill="rgba(10,25,49,.10)"/>
+      <rect x="48" y="190" width="240" height="1" fill="rgba(10,25,49,.10)"/>
+      <!-- Sri Lanka outline simplified -->
+      <text x="200" y="320" fill="rgba(0,97,117,.08)" font-family="Cormorant Garamond,serif" font-size="90" text-anchor="middle" font-weight="400">LK</text>
+      <!-- Stamp circle -->
+      <circle cx="310" cy="110" r="44" stroke="#0097A7" stroke-width="1.2" stroke-dasharray="4 3" fill="rgba(0,151,167,.06)"/>
+      <text x="310" y="105" fill="rgba(0,97,117,.55)" font-family="Cormorant Garamond,serif" font-size="10" text-anchor="middle" font-style="italic" letter-spacing="2">REGISTERED</text>
+      <text x="310" y="120" fill="rgba(0,97,117,.55)" font-family="Cormorant Garamond,serif" font-size="10" text-anchor="middle" font-style="italic" letter-spacing="2">SECRETARY</text>
+      <!-- Checkmarks -->
+      <text x="48" y="380" fill="rgba(0,97,117,.45)" font-family="Inter,sans-serif" font-size="11" font-weight="500">✓  Company Registration</text>
+      <text x="48" y="400" fill="rgba(0,97,117,.35)" font-family="Inter,sans-serif" font-size="11" font-weight="500">✓  Business Licences</text>
+      <text x="48" y="420" fill="rgba(0,97,117,.25)" font-family="Inter,sans-serif" font-size="11" font-weight="500">✓  Trademarks &amp; IP</text>
+    </svg>
+  </div>
+</div>
+</section>
+
+<!-- ══ CONTACT ══ -->
+<section class="contact" id="contact">
+  <!-- Large faded accounting mark -->
+  <div class="acct-deco" aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;">
+    <span style="position:absolute;bottom:-5%;right:-2%;font-family:'Cormorant Garamond',serif;font-size:clamp(200px,32vw,480px);font-style:italic;color:rgba(0,97,117,.05);line-height:1;">AA</span>
+  </div>
+  <h2 class="contact-title">Contact <em>us.</em></h2>
+  <div class="contact-grid">
+    <div>
+      <div class="ci-label">Telephone</div>
+      <a href="tel:+94775979730" data-cursor>
+        <div class="ci-val">077 597 9730<br>035 224 7603</div>
+      </a>
+    </div>
+    <div>
+      <div class="ci-label">Correspondence</div>
+      <a href="mailto:info@accurateaccounting.lk" data-cursor>
+        <div class="ci-val">info@accurate<br>accounting.lk</div>
+      </a>
+    </div>
+    <div>
+      <div class="ci-label">Atelier</div>
+      <div class="ci-val">No. 146, Hemmathagama Rd,<br>Mawanella, Sri Lanka</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div>© 2025 Accurate Accounting (Pvt) Ltd</div>
+  <div><em>Precision in numbers, trust in practice.</em></div>
+  <div>Mawanella · Sri Lanka</div>
+</footer>
+
+<!-- ══ SCRIPTS ══ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script>
+
+/* ─── LOADER ─── */
+const loader = document.getElementById('loader');
+const lBar   = document.getElementById('lBar');
+const lNum   = document.getElementById('lNum');
+const lMark  = document.querySelector('.loader-mark');
+let prog = { v: 0 };
+
+gsap.to(lMark, { opacity: 1, duration: .8, ease: 'power2.out' });
+gsap.to(prog, {
+  v: 100, duration: 1.9, ease: 'power2.inOut',
+  onUpdate() {
+    const n = Math.round(prog.v);
+    lBar.style.width = n + '%';
+    lNum.textContent = n;
+  },
+  onComplete() {
+    gsap.to(loader, {
+      yPercent: -100, duration: 1.1, ease: 'power4.inOut',
+      onComplete() { loader.style.display = 'none'; initHero(); }
+    });
+  }
+});
+
+/* ─── LENIS smooth scroll ─── */
+const lenis = new Lenis({
+  duration: 1.4,
+  easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  smoothWheel: true, wheelMultiplier: 1, touchMultiplier: 2,
+});
+lenis.on('scroll', ScrollTrigger.update);
+gsap.ticker.add(t => lenis.raf(t * 1000));
+gsap.ticker.lagSmoothing(0);
+
+/* ─── CURSOR ─── */
+const cDot  = document.getElementById('cDot');
+const cRing = document.getElementById('cRing');
+const mouse = { x: innerWidth / 2, y: innerHeight / 2 };
+const lag   = { x: mouse.x, y: mouse.y };
+
+window.addEventListener('mousemove', e => {
+  mouse.x = e.clientX;
+  mouse.y = e.clientY;
+  gsap.to(cDot, { x: mouse.x, y: mouse.y, duration: .12, ease: 'power2.out' });
+});
+
+gsap.ticker.add(() => {
+  lag.x += (mouse.x - lag.x) * .11;
+  lag.y += (mouse.y - lag.y) * .11;
+  gsap.set(cRing, { x: lag.x, y: lag.y });
+});
+
+document.querySelectorAll('[data-cursor], a, button, .srv-row').forEach(el => {
+  el.addEventListener('mouseenter', () => cRing.classList.add('hover'));
+  el.addEventListener('mouseleave', () => cRing.classList.remove('hover'));
+});
+
+/* ─── NAV pill indicator ─── */
+const nav       = document.getElementById('nav');
+const indicator = document.getElementById('navIndicator');
+const pillLinks = document.querySelectorAll('.nav-pill-link');
+
+function moveIndicator(link) {
+  const track = document.getElementById('navTrack');
+  const tRect = track.getBoundingClientRect();
+  const lRect = link.getBoundingClientRect();
+  indicator.style.width  = lRect.width  + 'px';
+  indicator.style.height = lRect.height + 'px';
+  indicator.style.left   = (lRect.left - tRect.left) + 'px';
+  indicator.style.top    = (lRect.top  - tRect.top)  + 'px';
+}
+
+function setActiveLink(sectionId) {
+  pillLinks.forEach(l => l.classList.remove('is-active'));
+  const target = document.querySelector(`.nav-pill-link[data-section="${sectionId}"]`)
+               || pillLinks[0];
+  target.classList.add('is-active');
+  moveIndicator(target);
+}
+
+/* Init indicator on first active link */
+window.addEventListener('load', () => {
+  const active = document.querySelector('.nav-pill-link.is-active') || pillLinks[0];
+  moveIndicator(active);
+});
+
+/* Track sections via ScrollTrigger */
+['hero','services','registration','contact'].forEach(id => {
+  const el = document.getElementById(id) || document.querySelector('#' + id);
+  if (!el) return;
+  ScrollTrigger.create({
+    trigger: el,
+    start: 'top 55%',
+    end: 'bottom 55%',
+    onEnter:      () => setActiveLink(id),
+    onEnterBack:  () => setActiveLink(id),
+  });
+});
+
+/* Smooth anchor scrolling */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) { e.preventDefault(); lenis.scrollTo(t, { offset: -20, duration: 1.6 }); }
+  });
+});
+
+/* ─── LIQUID BG — scroll parallax ─── */
+function initLiquidScroll() {
+  const blobs = document.querySelectorAll('.blob');
+  const speeds = [-.18, -.10, -.22, -.14, -.08];
+  blobs.forEach((b, i) => {
+    gsap.to(b, {
+      yPercent: speeds[i] * 100,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: document.body,
+        start: 'top top',
+        end: 'bottom bottom',
+        scrub: 3 + i * .6
+      }
+    });
+  });
+}
+
+/* ─── HERO INTRO ─── */
+function initHero() {
+  const spans = document.querySelectorAll('#hTitle .word > span');
+  const tl = gsap.timeline({ defaults: { ease: 'expo.out' } });
+  tl.to('#hEye',  { opacity: 1, duration: .8 }, .1)
+    .to(spans,    { y: 0, duration: 1.4, stagger: .065 }, .2)
+    .to('#hSub',  { opacity: 1, duration: 1, ease: 'power2.out' }, 1.0)
+    .to('#hScroll', { opacity: 1, duration: 1 }, 1.4);
+
+  initScroll();
+  initLiquidScroll();
+}
+
+/* ─── SCROLL ANIMATIONS ─── */
+function initScroll() {
+
+  /* Hero content fades out and rises on scroll */
+  gsap.to('.hero-content', {
+    yPercent: -15, opacity: 0, ease: 'none',
+    scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: true }
+  });
+  /* Manifesto lines reveal */
+  gsap.to('#mText .rl > span', {
+    y: 0, duration: 1.2, stagger: .12, ease: 'expo.out',
+    scrollTrigger: { trigger: '#mText', start: 'top 75%' }
+  });
+
+
+  /* Service rows staggered reveal */
+  gsap.utils.toArray('.srv-row').forEach(row => {
+    gsap.from(row, {
+      y: 50, opacity: 0, duration: 1.1, ease: 'expo.out',
+      scrollTrigger: { trigger: row, start: 'top 88%' }
+    });
+  });
+
+  /* Quote word-by-word flip */
+  gsap.to('#qText .w > span', {
+    y: 0, duration: 1.2, stagger: .055, ease: 'expo.out',
+    scrollTrigger: { trigger: '#qText', start: 'top 75%' }
+  });
+  gsap.to('#qBg', {
+    xPercent: -14, ease: 'none',
+    scrollTrigger: { trigger: '.quote-wrap', start: 'top bottom', end: 'bottom top', scrub: true }
+  });
+
+  /* Registration section */
+  gsap.to('.reg-visual', {
+    y: -55, ease: 'none',
+    scrollTrigger: { trigger: '.reg', start: 'top bottom', end: 'bottom top', scrub: true }
+  });
+  gsap.from(['.sec-label.n03', '.reg-title', '.reg-desc', '.reg-cta'], {
+    y: 50, opacity: 0, duration: 1.1, stagger: .12, ease: 'expo.out',
+    scrollTrigger: { trigger: '.reg', start: 'top 70%' }
+  });
+
+  /* Stats counters */
+  document.querySelectorAll('.sc').forEach(el => {
+    const target = parseInt(el.dataset.t);
+    ScrollTrigger.create({
+      trigger: el, start: 'top 85%', once: true,
+      onEnter() {
+        gsap.to({ v: 0 }, {
+          v: target, duration: 2.2, ease: 'power2.out',
+          onUpdate() { el.textContent = Math.round(this.targets()[0].v); }
+        });
+      }
+    });
+  });
+
+  /* Contact reveal */
+  gsap.from('.contact-title', {
+    y: 80, opacity: 0, duration: 1.3, ease: 'expo.out',
+    scrollTrigger: { trigger: '.contact-title', start: 'top 80%' }
+  });
+  gsap.from('.contact-grid > *', {
+    y: 40, opacity: 0, duration: 1, stagger: .1, ease: 'expo.out',
+    scrollTrigger: { trigger: '.contact-grid', start: 'top 85%' }
+  });
+
+  document.fonts.ready.then(() => ScrollTrigger.refresh());
+}
+
+window.addEventListener('resize', () => ScrollTrigger.refresh());
+</script>
+</body>
+</html>
