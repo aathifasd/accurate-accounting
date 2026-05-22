@@ -299,12 +299,12 @@ nav:hover {
     top: 12px;
     left: 12px; right: 12px;
     transform: none;
-    padding: 5px;
-    gap: 0;
+    padding: 5px 5px 5px 10px;
+    gap: 6px;
     white-space: nowrap;
   }
-  .nav-logo { display: none; }
-  .nav-track { width: 100%; gap: 0; }
+  .nav-logo { height: 26px; flex-shrink: 0; }
+  .nav-track { flex: 1; gap: 0; }
   .nav-pill-link {
     flex: 1;
     text-align: center;
@@ -312,7 +312,10 @@ nav:hover {
     font-size: 9px;
     letter-spacing: .07em;
   }
-  .nav-pill-link:nth-child(n+3) { display: block; }
+  /* Show Services (3rd child) and Registration (4th child), hide Contact (5th child) */
+  .nav-pill-link:nth-child(3) { display: block; }
+  .nav-pill-link:nth-child(4) { display: block; }
+  .nav-pill-link:nth-child(5) { display: none; }
 }
 
 /* ══════════════════════════════════════════
